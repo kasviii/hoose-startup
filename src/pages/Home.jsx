@@ -115,7 +115,7 @@ export default function Home() {
     <div style={{backgroundColor: "#faf7f2"}}>
 
       {/* HERO */}
-      <section ref={heroRef} style={{position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden", background: "#060f08"}}>
+      <section ref={heroRef} style={{position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden", background: "#0b7d40"}}>
 
         {/* Animated orbs */}
         <div style={{position: "absolute", inset: 0, overflow: "hidden"}}>
@@ -417,7 +417,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section style={{position: "relative", overflow: "hidden", padding: "120px 0", background: "#060f08"}}>
+      <section style={{position: "relative", overflow: "hidden", padding: "120px 0", background: "#0b7d40"}}>
         <div style={{position: "absolute", inset: 0}}>
           <div style={{position: "absolute", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(11,125,64,0.4) 0%, transparent 65%)", top: "50%", left: "50%", transform: "translate(-50%,-50%)", animation: "orbMove3 8s ease-in-out infinite"}} />
           <div style={{position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)", backgroundSize: "60px 60px"}} />

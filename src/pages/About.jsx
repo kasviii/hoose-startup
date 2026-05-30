@@ -24,7 +24,7 @@ export default function About() {
     <div style={{backgroundColor: "#faf7f2"}}>
 
       {/* Hero */}
-      <section style={{position: "relative", background: "#060f08", overflow: "hidden", padding: "160px 0 100px"}}>
+      <section style={{position: "relative", background: "#0b7d40", overflow: "hidden", padding: "160px 0 100px"}}>
         <div style={{position: "absolute", inset: 0}}>
           <div style={{position: "absolute", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(11,125,64,0.4) 0%, transparent 70%)", top: "-100px", right: "-100px", animation: "orbMove1 12s ease-in-out infinite"}} />
           <div style={{position: "absolute", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, rgba(74,222,128,0.15) 0%, transparent 70%)", bottom: "-50px", left: "10%", animation: "orbMove2 15s ease-in-out infinite"}} />
@@ -97,7 +97,7 @@ export default function About() {
               <p style={{fontSize: "17px", lineHeight: "1.9", color: "#374151"}}>
                 That belief became the foundation of Hoose.
               </p>
-              <div style={{background: "linear-gradient(135deg, #060f08, #0b3d20)", border: "1px solid rgba(74,222,128,0.2)", borderRadius: "20px", padding: "28px 32px", position: "relative", overflow: "hidden"}}>
+              <div style={{background: "linear-gradient(135deg, #0b7d40, #0b3d20)", border: "1px solid rgba(74,222,128,0.2)", borderRadius: "20px", padding: "28px 32px", position: "relative", overflow: "hidden"}}>
                 <div style={{position: "absolute", top: "-20px", right: "-20px", width: "100px", height: "100px", borderRadius: "50%", background: "radial-gradient(circle, rgba(74,222,128,0.15) 0%, transparent 70%)"}} />
                 <div style={{fontSize: "32px", color: "rgba(74,222,128,0.3)", fontFamily: "Georgia, serif", lineHeight: 1, marginBottom: "12px"}}>"</div>
                 <p style={{fontSize: "16px", color: "rgba(255,255,255,0.85)", margin: 0, lineHeight: "1.8", fontStyle: "italic"}}>
@@ -165,7 +165,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              style={{background: "linear-gradient(135deg, #060f08, #0b3d20)", border: "1px solid rgba(74,222,128,0.15)", borderRadius: "28px", padding: "48px", position: "relative", overflow: "hidden"}}
+              style={{background: "linear-gradient(135deg, #0b7d40, #0b3d20)", border: "1px solid rgba(74,222,128,0.15)", borderRadius: "28px", padding: "48px", position: "relative", overflow: "hidden"}}
             >
               <div style={{position: "absolute", top: "-40px", right: "-40px", width: "180px", height: "180px", borderRadius: "50%", background: "radial-gradient(circle, rgba(74,222,128,0.15) 0%, transparent 70%)"}} />
               <div style={{fontSize: "40px", marginBottom: "20px"}}>🔭</div>

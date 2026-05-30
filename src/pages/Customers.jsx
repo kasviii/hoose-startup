@@ -50,7 +50,7 @@ export default function Customers() {
   const navigate = useNavigate();
 
   return (
-    <div style={{backgroundColor: "#060f08"}}>
+    <div style={{backgroundColor: "#0b7d40"}}>
 
       {/* Hero */}
       <section style={{position: "relative", overflow: "hidden", padding: "160px 0 80px"}}>
@@ -90,7 +90,7 @@ export default function Customers() {
       </section>
 
       {/* Perks */}
-      <section style={{backgroundColor: "#060f08", padding: "80px 0"}}>
+      <section style={{backgroundColor: "#0b7d40", padding: "80px 0"}}>
         <div style={{maxWidth: "1180px", margin: "0 auto", padding: "0 48px"}}>
           <div style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "16px", marginBottom: "100px"}}>
             {perks.map(function(p, i) {

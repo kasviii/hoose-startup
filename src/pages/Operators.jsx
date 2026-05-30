@@ -14,7 +14,7 @@ export default function Operators() {
   const navigate = useNavigate();
 
   return (
-    <div style={{backgroundColor: "#060f08"}}>
+    <div style={{backgroundColor: "#0b7d40"}}>
 
       <section style={{position: "relative", overflow: "hidden", padding: "160px 0 80px"}}>
         <div style={{position: "absolute", inset: 0}}>
@@ -51,7 +51,7 @@ export default function Operators() {
         </div>
       </section>
 
-      <section style={{backgroundColor: "#060f08", padding: "40px 0 120px"}}>
+      <section style={{backgroundColor: "#0b7d40", padding: "40px 0 120px"}}>
         <div style={{maxWidth: "1100px", margin: "0 auto", padding: "0 48px"}}>
 
           <div style={{display: "grid", gridTemplateColumns: "1fr 2fr", gap: "64px", alignItems: "center", marginBottom: "100px", padding: "64px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "32px"}}>

@@ -45,7 +45,7 @@ export default function Contact() {
   ];
 
   return (
-    <div style={{backgroundColor: "#060f08"}}>
+    <div style={{backgroundColor: "#0b7d40"}}>
 
       {/* Hero */}
       <section style={{position: "relative", overflow: "hidden", padding: "160px 0 80px"}}>
@@ -85,7 +85,7 @@ export default function Contact() {
       </section>
 
       {/* Content */}
-      <section style={{backgroundColor: "#060f08", padding: "80px 0 120px"}}>
+      <section style={{backgroundColor: "#0b7d40", padding: "80px 0 120px"}}>
         <div style={{maxWidth: "1100px", margin: "0 auto", padding: "0 48px"}}>
           <div style={{display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "start"}}>
 
