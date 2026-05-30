@@ -101,7 +101,7 @@ export default function Customers() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.07 }}
-                  style={{backgroundColor: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "20px", padding: "28px", display: "flex", gap: "16px", alignItems: "flex-start"}}
+                  style={{backgroundColor: "rgba(0,0,0,0.18)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "20px", padding: "28px", display: "flex", gap: "16px", alignItems: "flex-start"}}
                   whileHover={{ backgroundColor: "rgba(255,255,255,0.06)", borderColor: "rgba(74,222,128,0.2)" }}
                 >
                   <div style={{fontSize: "28px", flexShrink: 0}}>{p[0]}</div>
@@ -143,10 +143,10 @@ export default function Customers() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: i * 0.1 }}
                   style={{
-                    background: hl ? "linear-gradient(160deg, #0b3d20 0%, #0b7d40 100%)" : "rgba(255,255,255,0.04)",
+                    background: hl ? "rgba(0,0,0,0.3)" : "rgba(0,0,0,0.18)",
                     borderRadius: "28px",
                     padding: "36px 32px",
-                    border: hl ? "1px solid rgba(74,222,128,0.3)" : "1px solid rgba(255,255,255,0.07)",
+                    border: hl ? "1px solid rgba(255,255,255,0.3)" : "1px solid rgba(255,255,255,0.12)",
                     position: "relative",
                     display: "flex",
                     flexDirection: "column",
