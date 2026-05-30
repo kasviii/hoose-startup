@@ -16,13 +16,8 @@ export default function Navbar() {
 
   const pages = [["home", "/"], ["about", "/about"], ["contact", "/contact"]];
 
-  const navBg = scrolled
-    ? "rgba(10,26,15,0.85)"
-    : "transparent";
-
-  const navBorder = scrolled
-    ? "1px solid rgba(255,255,255,0.08)"
-    : "1px solid transparent";
+  const navBg = scrolled ? "rgba(11,125,64,0.97)" : "#0b7d40";
+  const navBorder = scrolled ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent";
 
   return (
     <motion.header
@@ -44,12 +39,13 @@ export default function Navbar() {
       <nav style={{maxWidth: "1280px", margin: "0 auto", padding: "20px 48px", display: "flex", alignItems: "center", justifyContent: "space-between"}}>
 
         <motion.div
-            onClick={function() { navigate("/"); }}
-            style={{cursor: "pointer", display: "flex", alignItems: "center"}}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            >
-            <img src="/logo.jpeg" alt="Hoose" style={{height: "44px", borderRadius: "8px"}} />
+          onClick={function() { navigate("/"); }}
+          style={{cursor: "pointer", display: "flex", flexDirection: "column", lineHeight: 1}}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+        >
+          <span style={{color: "white", fontSize: "26px", fontWeight: "700", letterSpacing: "1px", fontFamily: "Josefin Sans, sans-serif"}}>hoose</span>
+          <span style={{color: "rgba(255,255,255,0.7)", fontSize: "7px", letterSpacing: "3px", textTransform: "uppercase", marginTop: "-1px", fontWeight: "600", fontFamily: "Instrument Sans, sans-serif"}}>India's Biggest Food Network</span>
         </motion.div>
 
         <div style={{display: "flex", alignItems: "center", gap: "36px"}}>
@@ -57,7 +53,6 @@ export default function Navbar() {
             onClick={function() { navigate("/"); }}
             style={{color: location.pathname === "/" ? "white" : "rgba(255,255,255,0.6)", fontSize: "14px", fontWeight: "500", cursor: "pointer", position: "relative", paddingBottom: "2px"}}
             whileHover={{ color: "white" }}
-            data-cursor="pointer"
           >
             Home
             {location.pathname === "/" && (
@@ -155,7 +150,7 @@ export default function Navbar() {
 
         <motion.div
           onClick={function() { navigate("/contact"); }}
-          style={{backgroundColor: "white", color: "#0a1a0f", padding: "10px 24px", borderRadius: "999px", fontSize: "13px", fontWeight: "700", cursor: "pointer", fontFamily: "Syne, sans-serif"}}
+          style={{backgroundColor: "white", color: "#0b7d40", padding: "10px 24px", borderRadius: "999px", fontSize: "13px", fontWeight: "700", cursor: "pointer", fontFamily: "Josefin Sans, sans-serif"}}
           whileHover={{ scale: 1.05, backgroundColor: "#86efac" }}
           whileTap={{ scale: 0.96 }}
           transition={{ type: "spring", stiffness: 400, damping: 20 }}
