@@ -1,7 +1,14 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const foodItems = ["🍛", "🥘", "🍜", "🥗", "🍱", "🌮", "🍢", "🥟", "🍤", "🧆"];
+
+const heroImages = [
+  "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=1400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=1400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1400&auto=format&fit=crop",
+];
 
 function AnimatedHoose() {
   const [index, setIndex] = useState(0);
@@ -17,26 +24,31 @@ function AnimatedHoose() {
 
   return (
     <span style={{display: "inline-flex", alignItems: "center", fontFamily: "Syne, sans-serif", fontSize: "64px", fontWeight: "900", letterSpacing: "-2px", lineHeight: "1.05"}}>
+      <span style={{color: "rgba(255,255,255,0.4)", fontSize: "48px", marginRight: "2px"}}>"</span>
       {letters.map(function(letter, i) {
         const isFood = i === 1 || i === 2;
         return (
-          <span key={i} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", width: isFood ? "64px" : "auto", overflow: "hidden", height: "72px"}}>
+          <span key={i} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", width: isFood ? "60px" : "auto", overflow: "hidden", height: "72px"}}>
             {isFood ? (
-              <motion.span
-                key={index + "-" + i}
-                initial={{ y: -50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                style={{display: "inline-block", fontSize: "44px"}}
-              >
-                {foodItems[(index + i) % foodItems.length]}
-              </motion.span>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={index + "-" + i}
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 50, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  style={{display: "inline-block", fontSize: "42px", position: "absolute"}}
+                >
+                  {foodItems[(index + i) % foodItems.length]}
+                </motion.span>
+              </AnimatePresence>
             ) : (
               <span style={{color: "white"}}>{letter}</span>
             )}
           </span>
         );
       })}
+      <span style={{color: "rgba(255,255,255,0.4)", fontSize: "48px", marginLeft: "2px"}}>"</span>
     </span>
   );
 }
@@ -68,6 +80,15 @@ const stats = [
 ];
 
 export default function About() {
+  const [imgIndex, setImgIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(function() {
+      setImgIndex(function(prev) { return (prev + 1) % heroImages.length; });
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div style={{backgroundColor: "#0b7d40"}}>
 
@@ -95,9 +116,9 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 style={{marginBottom: "24px"}}
               >
-                <div style={{marginBottom: "4px"}}>
+                <div style={{marginBottom: "4px", display: "flex", alignItems: "center", flexWrap: "wrap", gap: "8px"}}>
                   <AnimatedHoose />
-                  <span style={{fontFamily: "Syne, sans-serif", fontSize: "64px", fontWeight: "900", color: "white", letterSpacing: "-2px", lineHeight: "1.05"}}> the guy</span>
+                  <span style={{fontFamily: "Syne, sans-serif", fontSize: "64px", fontWeight: "900", color: "white", letterSpacing: "-2px", lineHeight: "1.05"}}>the guy</span>
                 </div>
                 <div style={{fontFamily: "Syne, sans-serif", fontSize: "64px", fontWeight: "900", color: "white", letterSpacing: "-2px", lineHeight: "1.05"}}>
                   doing it?
@@ -133,22 +154,44 @@ export default function About() {
               </motion.div>
             </div>
 
-            {/* Right image */}
+            {/* Right — cycling images */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               style={{position: "relative"}}
             >
-              <div style={{borderRadius: "28px", overflow: "hidden", boxShadow: "0 32px 64px rgba(0,0,0,0.35)", position: "relative"}}>
-                <img
-                  src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1400&auto=format&fit=crop"
-                  alt="Indian street food stall"
-                  style={{width: "100%", height: "460px", objectFit: "cover", display: "block"}}
-                />
-                <div style={{position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)"}} />
+              <div style={{borderRadius: "28px", overflow: "hidden", boxShadow: "0 32px 64px rgba(0,0,0,0.35)", position: "relative", height: "460px"}}>
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={imgIndex}
+                    src={heroImages[imgIndex]}
+                    alt="Indian street food"
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.97 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    style={{width: "100%", height: "460px", objectFit: "cover", display: "block", position: "absolute", inset: 0}}
+                  />
+                </AnimatePresence>
+                <div style={{position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)", zIndex: 1}} />
+
+                {/* Image dots */}
+                <div style={{position: "absolute", bottom: "80px", left: "50%", transform: "translateX(-50%)", display: "flex", gap: "6px", zIndex: 2}}>
+                  {heroImages.map(function(_, i) {
+                    return (
+                      <motion.div
+                        key={i}
+                        onClick={function() { setImgIndex(i); }}
+                        style={{height: "4px", borderRadius: "999px", backgroundColor: i === imgIndex ? "white" : "rgba(255,255,255,0.35)", cursor: "pointer"}}
+                        animate={{ width: i === imgIndex ? 20 : 6 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-              <div style={{position: "absolute", bottom: "24px", left: "24px", right: "24px", backgroundColor: "rgba(0,0,0,0.55)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "16px", padding: "16px 20px", backdropFilter: "blur(20px)"}}>
+              <div style={{position: "absolute", bottom: "24px", left: "24px", right: "24px", backgroundColor: "rgba(0,0,0,0.55)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "16px", padding: "16px 20px", backdropFilter: "blur(20px)", zIndex: 2}}>
                 <div style={{fontSize: "13px", color: "#86efac", fontWeight: "600", marginBottom: "4px"}}>Founded in Mumbai</div>
                 <div style={{fontSize: "15px", color: "white", fontWeight: "700", fontFamily: "Syne, sans-serif"}}>Building India's food future, one vendor at a time</div>
               </div>
