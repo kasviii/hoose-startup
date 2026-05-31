@@ -86,7 +86,7 @@ export default function Customers() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                style={{fontFamily: "Syne, sans-serif", fontSize: isMobile ? "38px" : "58px", fontWeight: "900", color: "white", letterSpacing: isMobile ? "-1px" : "-2px", lineHeight: "1.05", marginBottom: "20px"}}
+                style={{fontFamily: "Syne, sans-serif", fontSize: isMobile ? "30px" : "58px", fontWeight: "900", color: "white", letterSpacing: isMobile ? "-1px" : "-2px", lineHeight: "1.05", marginBottom: "20px"}}
               >
                 Services designed<br />for food<br />
                 <span style={{background: "linear-gradient(90deg, white 0%, rgba(255,255,255,0.7) 30%, white 60%, rgba(255,255,255,0.5) 100%)", backgroundSize: "200% auto", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", animation: "shimmer 4s linear infinite"}}>entrepreneurs</span>
