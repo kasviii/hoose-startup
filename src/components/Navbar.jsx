@@ -164,7 +164,7 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              position: "fixed", top: "52px", left: 0, right: 0,
+              position: "fixed", top: "50px", left: 0, right: 0,
               backgroundColor: "#085c30",
               zIndex: 998,
               borderBottom: "1px solid rgba(255,255,255,0.1)",

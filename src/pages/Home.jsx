@@ -132,7 +132,7 @@ export default function Home() {
 
         <div style={{position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)", backgroundSize: "60px 60px", zIndex: 1}} />
 
-        <motion.div style={{maxWidth: "1280px", margin: "0 auto", padding: isMobile ? "100px 20px 60px" : "100px 48px 60px", width: "100%", position: "relative", zIndex: 2, y: heroY, opacity: heroOpacity}}>
+        <motion.div style={{maxWidth: "1280px", margin: "0 auto", padding: isMobile ? "70px 20px 40px" : "100px 48px 60px", width: "100%", position: "relative", zIndex: 2, y: heroY, opacity: heroOpacity}}>
           <div style={{display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.1fr 0.9fr", gap: isMobile ? "40px" : "80px", alignItems: "center"}}>
 
             <div>
@@ -257,7 +257,7 @@ export default function Home() {
       </div>
 
       {/* STATS */}
-      <section style={{backgroundColor: "rgba(0,0,0,0.2)", color: "white", padding: isMobile ? "48px 0" : "72px 0"}}>
+      <section style={{backgroundColor: "rgba(0,0,0,0.2)", color: "white", padding: isMobile ? "36px 0" : "72px 0"}}>
         <div style={{maxWidth: "1280px", margin: "0 auto", padding: isMobile ? "0 20px" : "0 48px"}}>
           <div style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr", textAlign: "center"}}>
             {[[50, "+", "Vendors onboarded"], [null, "Mumbai", "Operating city"], [270, "+", "Community network"]].map(function(stat, i) {
@@ -265,13 +265,13 @@ export default function Home() {
               return (
                 <motion.div
                   key={label}
-                  style={{padding: isMobile ? "0 12px" : "0 40px", borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.12)" : "none"}}
+                  style={{padding: isMobile ? "0 8px" : "0 40px", borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.12)" : "none"}}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <div style={{fontSize: isMobile ? "32px" : "52px", fontWeight: "900", fontFamily: "Syne, sans-serif", lineHeight: 1, color: "white"}}>
+                  <div style={{fontSize: isMobile ? "22px" : "52px", fontWeight: "900", fontFamily: "Syne, sans-serif", lineHeight: 1, color: "white"}}>
                     {num !== null ? <Counter target={num} suffix={suffix} /> : suffix}
                   </div>
                   <p style={{color: "rgba(255,255,255,0.6)", marginTop: "8px", fontSize: isMobile ? "11px" : "14px", fontWeight: "500", letterSpacing: "0.5px"}}>{label}</p>
