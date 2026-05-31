@@ -55,7 +55,7 @@ export default function Contact() {
     <div style={{backgroundColor: "#0b7d40"}}>
 
       {/* Hero — split layout */}
-      <section style={{position: "relative", overflow: "hidden", background: "linear-gradient(160deg, #085c30 0%, #0b7d40 50%, #0d9651 100%)", padding: "140px 0 80px"}}>
+      <section style={{position: "relative", overflow: "hidden", background: "linear-gradient(160deg, #085c30 0%, #0b7d40 50%, #0d9651 100%)", padding: "110px 0 60px"}}>
         <div style={{position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)", backgroundSize: "60px 60px"}} />
 
         <div style={{maxWidth: "1280px", margin: "0 auto", padding: "0 48px", position: "relative", zIndex: 1}}>
@@ -77,7 +77,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                style={{fontFamily: "Syne, sans-serif", fontSize: "58px", fontWeight: "900", color: "white", letterSpacing: "-2px", lineHeight: "1.05", marginBottom: "24px"}}
+                style={{fontFamily: "Syne, sans-serif", fontSize: "48px", fontWeight: "900", color: "white", letterSpacing: "-2px", lineHeight: "1.05", marginBottom: "24px"}}
               >
                 Let's grow your<br />
                 <span style={{

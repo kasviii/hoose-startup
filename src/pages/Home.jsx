@@ -148,7 +148,7 @@ export default function Home() {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  style={{fontFamily: "Syne, sans-serif", fontSize: "72px", fontWeight: "900", lineHeight: "1.02", letterSpacing: "-3px", color: "white", margin: 0}}
+                  style={{fontFamily: "Syne, sans-serif", fontSize: "62px", fontWeight: "900", lineHeight: "1.02", letterSpacing: "-3px", color: "white", margin: 0}}
                 >
                   {"India's first & "}
                   <span className="shimmer-text">biggest</span>
@@ -290,9 +290,9 @@ export default function Home() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section style={{backgroundColor: "#0b7d40", padding: "120px 0"}}>
+      <section style={{backgroundColor: "#0b7d40", padding: "100px 0"}}>
         <div style={{maxWidth: "1280px", margin: "0 auto", padding: "0 48px"}}>
-          <div className="reveal" style={{textAlign: "center", marginBottom: "80px"}}>
+          <div className="reveal" style={{textAlign: "center", marginBottom: "60px"}}>
             <div style={{display: "inline-block", backgroundColor: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "white", padding: "6px 16px", borderRadius: "999px", fontSize: "11px", fontWeight: "700", marginBottom: "20px", letterSpacing: "1.5px", textTransform: "uppercase"}}>How It Works</div>
             <h2 style={{fontFamily: "Syne, sans-serif", fontSize: "48px", fontWeight: "900", color: "white", letterSpacing: "-1.5px", marginBottom: "16px"}}>Four steps to success</h2>
             <p style={{fontSize: "17px", color: "rgba(255,255,255,0.7)", maxWidth: "480px", margin: "0 auto", lineHeight: "1.7"}}>Getting started with Hoose is simple. We handle the complexity so you can focus on your food.</p>
