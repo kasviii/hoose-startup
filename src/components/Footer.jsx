@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 function InstagramIcon() {
   return (
@@ -34,18 +35,27 @@ const SOCIALS = [["instagram", InstagramIcon], ["facebook", FacebookIcon], ["lin
 
 export default function Footer() {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
 
   return (
-    <footer style={{backgroundColor: "#0a1a0f", color: "white", padding: "64px 0 0"}}>
-      <div style={{maxWidth: "1280px", margin: "0 auto", padding: "0 48px"}}>
-        <div style={{display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "48px", marginBottom: "56px"}}>
+    <footer style={{backgroundColor: "#0a1a0f", color: "white", padding: isMobile ? "48px 0 0" : "64px 0 0"}}>
+      <div style={{maxWidth: "1280px", margin: "0 auto", padding: isMobile ? "0 20px" : "0 48px"}}>
 
-          <div>
-            <div style={{marginBottom: "20px"}}>
-              <div style={{fontFamily: "Syne, sans-serif", fontSize: "30px", fontWeight: "900", color: "white", letterSpacing: "-1px"}}>hoose</div>
+        {/* Main grid */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: isMobile ? "1fr 1fr" : "2fr 1fr 1fr 1fr",
+          gap: isMobile ? "32px" : "48px",
+          marginBottom: isMobile ? "40px" : "56px"
+        }}>
+
+          {/* Brand — full width on mobile */}
+          <div style={{gridColumn: isMobile ? "1 / -1" : "auto"}}>
+            <div style={{marginBottom: "16px"}}>
+              <div style={{fontFamily: "Josefin Sans, sans-serif", fontSize: "28px", fontWeight: "700", color: "white", letterSpacing: "1px"}}>hoose</div>
               <div style={{color: "#4ade80", fontSize: "8px", letterSpacing: "3px", textTransform: "uppercase", marginTop: "-2px"}}>India's Biggest Food Network</div>
             </div>
-            <p style={{fontSize: "14px", color: "#6b7280", lineHeight: "1.8", maxWidth: "260px", marginBottom: "28px"}}>
+            <p style={{fontSize: "14px", color: "#6b7280", lineHeight: "1.8", maxWidth: isMobile ? "100%" : "260px", marginBottom: "24px"}}>
               Helping local food businesses scale through technology, branding, community, and smarter operations.
             </p>
             <div style={{display: "flex", gap: "10px"}}>
@@ -66,33 +76,46 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Navigation */}
           <div>
             <h4 style={{fontFamily: "Syne, sans-serif", fontSize: "12px", fontWeight: "700", color: "#4ade80", marginBottom: "20px", textTransform: "uppercase", letterSpacing: "2px"}}>Navigation</h4>
             {NAV_LINKS.map(function(item) {
-              const label = item[0];
-              const path = item[1];
+              const label = item[0]; const path = item[1];
               return (
-                <div key={label} onClick={function() { navigate(path); }} style={{color: "#6b7280", fontSize: "14px", marginBottom: "12px", cursor: "pointer", transition: "color 0.2s"}} onMouseEnter={function(e) { e.currentTarget.style.color = "white"; }} onMouseLeave={function(e) { e.currentTarget.style.color = "#6b7280"; }}>
+                <div
+                  key={label}
+                  onClick={function() { navigate(path); }}
+                  style={{color: "#6b7280", fontSize: "14px", marginBottom: "12px", cursor: "pointer", transition: "color 0.2s"}}
+                  onMouseEnter={function(e) { e.currentTarget.style.color = "white"; }}
+                  onMouseLeave={function(e) { e.currentTarget.style.color = "#6b7280"; }}
+                >
                   {label}
                 </div>
               );
             })}
           </div>
 
+          {/* Services */}
           <div>
             <h4 style={{fontFamily: "Syne, sans-serif", fontSize: "12px", fontWeight: "700", color: "#4ade80", marginBottom: "20px", textTransform: "uppercase", letterSpacing: "2px"}}>Services</h4>
             {SERVICE_LINKS.map(function(item) {
-              const label = item[0];
-              const path = item[1];
+              const label = item[0]; const path = item[1];
               return (
-                <div key={label} onClick={function() { navigate(path); }} style={{color: "#6b7280", fontSize: "14px", marginBottom: "12px", cursor: "pointer", transition: "color 0.2s"}} onMouseEnter={function(e) { e.currentTarget.style.color = "white"; }} onMouseLeave={function(e) { e.currentTarget.style.color = "#6b7280"; }}>
+                <div
+                  key={label}
+                  onClick={function() { navigate(path); }}
+                  style={{color: "#6b7280", fontSize: "14px", marginBottom: "12px", cursor: "pointer", transition: "color 0.2s"}}
+                  onMouseEnter={function(e) { e.currentTarget.style.color = "white"; }}
+                  onMouseLeave={function(e) { e.currentTarget.style.color = "#6b7280"; }}
+                >
                   {label}
                 </div>
               );
             })}
           </div>
 
-          <div>
+          {/* Contact */}
+          <div style={{gridColumn: isMobile ? "1 / -1" : "auto"}}>
             <h4 style={{fontFamily: "Syne, sans-serif", fontSize: "12px", fontWeight: "700", color: "#4ade80", marginBottom: "20px", textTransform: "uppercase", letterSpacing: "2px"}}>Contact</h4>
             <p style={{color: "#6b7280", fontSize: "14px", marginBottom: "10px", lineHeight: "1.6"}}>+91 9137719788</p>
             <p style={{color: "#6b7280", fontSize: "14px", marginBottom: "10px", lineHeight: "1.6"}}>office@hoose.in</p>
@@ -100,7 +123,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div style={{borderTop: "1px solid rgba(255,255,255,0.06)", padding: "24px 0", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+        {/* Bottom bar */}
+        <div style={{
+          borderTop: "1px solid rgba(255,255,255,0.06)",
+          padding: "20px 0",
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          justifyContent: "space-between",
+          alignItems: isMobile ? "flex-start" : "center",
+          gap: isMobile ? "8px" : "0"
+        }}>
           <p style={{color: "#374151", fontSize: "13px"}}>© 2026 Hoose Pvt Ltd. All rights reserved.</p>
           <p style={{color: "#4ade80", fontSize: "13px", fontWeight: "600", letterSpacing: "0.5px"}}>Join. Launch. Grow. Expand.</p>
         </div>
