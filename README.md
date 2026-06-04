@@ -2,7 +2,7 @@
 
 Official website for Hoose, a platform connecting local food vendors with technology, branding, and community support.
 
-🌐 **Live:** https://hoose-startup.vercel.app
+🌐 **Live:** https://hoose-fv7fxaclo-kasviiis-projects.vercel.app/
 
 ## Tech Stack
 
